@@ -9,6 +9,7 @@ menu "SSD1306 Configuration"
 		default 19 if IDF_TARGET_ESP32C3
 		default 30 if IDF_TARGET_ESP32C6
 		default 27 if IDF_TARGET_ESP32H2
+		default 54 if IDF_TARGET_ESP32P4
 
 	choice INTERFACE
 		prompt "Interface"
@@ -60,6 +61,7 @@ menu "SSD1306 Configuration"
 		default 22 if IDF_TARGET_ESP32
 		default  2 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
 		default  2 if IDF_TARGET_ESP32H2
+		default  8 if IDF_TARGET_ESP32P4
 		default  6 # C3 and others
 		help
 			GPIO number (IOxx) to I2C SCL.
@@ -73,6 +75,7 @@ menu "SSD1306 Configuration"
 		default 21 if IDF_TARGET_ESP32
 		default  1 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
 		default  1 if IDF_TARGET_ESP32H2
+		default  7 if IDF_TARGET_ESP32P4
 		default  5 # C3 and others
 		help
 			GPIO number (IOxx) to I2C SDA.
@@ -85,6 +88,7 @@ menu "SSD1306 Configuration"
 		range 0 GPIO_RANGE_MAX
 		default 23 if IDF_TARGET_ESP32
 		default 35 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		default  8 if IDF_TARGET_ESP32P4
 		default  1 # C3 and others
 		help
 			GPIO number (IOxx) to SPI MOSI.
@@ -98,6 +102,7 @@ menu "SSD1306 Configuration"
 		range 0 GPIO_RANGE_MAX
 		default 18 if IDF_TARGET_ESP32
 		default 36 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		default  9 if IDF_TARGET_ESP32P4
 		default  2 # C3 and others
 		help
 			GPIO number (IOxx) to SPI SCLK.
@@ -111,6 +116,7 @@ menu "SSD1306 Configuration"
 		range 0 GPIO_RANGE_MAX
 		default  5 if IDF_TARGET_ESP32
 		default 34 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		default 11 if IDF_TARGET_ESP32P4
 		default 10 # C3 and others
 		help
 			GPIO number (IOxx) to SPI CS.
@@ -123,6 +129,7 @@ menu "SSD1306 Configuration"
 		range 0 GPIO_RANGE_MAX
 		default  4 if IDF_TARGET_ESP32
 		default 37 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+        default  6 if IDF_TARGET_ESP32P4
 		default  3 # C3 and others
 		help
 			GPIO number (IOxx) to SPI DC.
@@ -134,6 +141,7 @@ menu "SSD1306 Configuration"
 		range -1 GPIO_RANGE_MAX
 		default 15 if IDF_TARGET_ESP32
 		default 38 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		default -1 if IDF_TARGET_ESP32P4
 		default  4 # C3 and others
 		help
 			GPIO number (IOxx) to RESET.
